@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Node / React
+node_modules/
+dist/
+
+# Uploaded resumes and temporary files
+uploads/
+tmp/
+temp/
+
+# IDE / editor
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
