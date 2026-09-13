@@ -3,7 +3,7 @@ import pymupdf
 from docx import Document
 import io
 from utils.text_cleaner import clean_text
-
+from services.jd_extractor import extract_job_description
 
 app = FastAPI()
 
@@ -58,8 +58,10 @@ async def upload_job_description(file: UploadFile = File(...)):
 
     text = clean_text(text)
 
+    job_description = extract_job_description(text)
+
     return {
         "message": "Job description processed successfully",
         "filename": file.filename,
-        "text": text
+        "data": job_description.model_dump()
     }
